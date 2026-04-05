@@ -1,3 +1,16 @@
+<?php
+/**
+ * Module 1.3 Programming Assignment
+ * CSD440 Server-Side Scripting
+ * 
+ * This program displays a greeting message and the sum of two numbers
+ * using PHP. The program is written in HTML while the cell contents are
+ * generated through PHP loops.
+ * 
+ * @author Brittaney Perry-Morgan
+ * @date 2026-03-29
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
