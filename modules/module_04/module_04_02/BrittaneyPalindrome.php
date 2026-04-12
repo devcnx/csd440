@@ -33,7 +33,8 @@
  * @param string $str The string to test
  * @return bool True if the string is a palindrome, false otherwise
  */
-function isPalindrome($str) {
+function isPalindrome($str)
+{
     // Strip spaces and convert to lowercase for case-insensitive comparison
     $cleaned = strtolower(str_replace(' ', '', $str));
     $length = strlen($cleaned);
@@ -56,7 +57,8 @@ function isPalindrome($str) {
  * @param string $str The string to reverse
  * @return string The reversed string
  */
-function reverseString($str) {
+function reverseString($str)
+{
     $reversed = '';
     // Start from the last character and build the reversed string
     for ($i = strlen($str) - 1; $i >= 0; $i--) {
@@ -83,75 +85,85 @@ $date = date('F j, Y');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrome Checker — <?php echo $assignmentTitle; ?></title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-        }
-        .header-info {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #555;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        th {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 12px;
-            text-align: left;
-        }
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-        tr:hover {
-            background-color: #f9f9f9;
-        }
-        .result-true {
-            color: #27ae60;
-            font-weight: bold;
-        }
-        .result-false {
-            color: #c0392b;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <h1>Palindrome Checker</h1>
-    <div class="header-info">
-        <p><strong><?php echo $studentName; ?></strong></p>
-        <p><?php echo $assignmentTitle; ?> — <?php echo $courseName; ?></p>
-        <p><?php echo $date; ?></p>
-    </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Test String</th>
-                <th>Reversed String</th>
-                <th>Result</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($testStrings as $str): ?>
-                <?php
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Palindrome Checker — <?php echo $assignmentTitle; ?></title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 900px;
+                margin: 40px auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+            }
+
+            h1 {
+                text-align: center;
+                color: #2c3e50;
+            }
+
+            .header-info {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #555;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: #fff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            th {
+                background-color: #2c3e50;
+                color: #fff;
+                padding: 12px;
+                text-align: left;
+            }
+
+            td {
+                padding: 12px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            tr:hover {
+                background-color: #f9f9f9;
+            }
+
+            .result-true {
+                color: #27ae60;
+                font-weight: bold;
+            }
+
+            .result-false {
+                color: #c0392b;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Palindrome Checker</h1>
+        <div class="header-info">
+            <p><strong><?php echo $studentName; ?></strong></p>
+            <p><?php echo $assignmentTitle; ?> — <?php echo $courseName; ?></p>
+            <p><?php echo $date; ?></p>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Test String</th>
+                    <th>Reversed String</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($testStrings as $str): ?>
+                    <?php
                     // Reverse the string using the reverseString function
                     $reversed = reverseString($str);
                     // Check if the string is a palindrome
@@ -159,16 +171,17 @@ $date = date('F j, Y');
                     // Set display values based on the test result
                     $displayResult = $result ? 'PALINDROME' : 'NOT A PALINDROME';
                     $class = $result ? 'result-true' : 'result-false';
-                ?>
-                <tr>
-                    <td><?php echo htmlspecialchars($str); ?></td>
-                    <td><?php echo htmlspecialchars($reversed); ?></td>
-                    <td class="<?php echo $class; ?>">
-                        <?php echo $displayResult; ?>
-                    </td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</body>
+                    ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($str); ?></td>
+                        <td><?php echo htmlspecialchars($reversed); ?></td>
+                        <td class="<?php echo $class; ?>">
+                            <?php echo $displayResult; ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </body>
+
 </html>
