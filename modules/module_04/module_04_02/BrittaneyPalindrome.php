@@ -131,32 +131,6 @@ $date = date('F j, Y');
             color: #c0392b;
             font-weight: bold;
         }
-        .definition {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-left: 4px solid #2c3e50;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .definition h2 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        .definition h3 {
-            margin-top: 20px;
-            color: #555;
-        }
-        .definition ul {
-            margin-top: 10px;
-        }
-        .definition li {
-            margin-bottom: 8px;
-        }
-        .definition code {
-            background-color: #f0f0f0;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
     </style>
 </head>
 <body>
@@ -165,25 +139,6 @@ $date = date('F j, Y');
         <p><strong><?php echo $studentName; ?></strong></p>
         <p><?php echo $assignmentTitle; ?> — <?php echo $courseName; ?></p>
         <p><?php echo $date; ?></p>
-    </div>
-
-    <div class="definition">
-        <h2>What is a Palindrome?</h2>
-        <p>A palindrome is a word, phrase, number, or sequence of characters that reads identically forward and backward. The comparison is case-insensitive and ignores spaces, so <code>Racecar</code>, <code>racecar</code>, and <code>race car</code> are all valid palindromes.</p>
-        <h3>Requirements for a valid palindrome:</h3>
-        <ul>
-            <li>The sequence reads the same character-by-character in both directions</li>
-            <li>Uppercase and lowercase letters are treated as equivalent</li>
-            <li>Spaces are ignored and do not affect the comparison</li>
-            <li>The comparison stops at the midpoint; characters beyond it mirror those before it</li>
-        </ul>
-        <h3>What a palindrome is NOT:</h3>
-        <ul>
-            <li>A word that simply has the same letters but in different order (anagram)</li>
-            <li>A sequence that is the same forwards and backwards but case-sensitive ('Hello' vs 'olleH')</li>
-            <li>A phrase where spaces are counted and break the symmetry</li>
-            <li>Numbers or strings with special characters that survive the cleaning process</li>
-        </ul>
     </div>
 
     <table>
