@@ -19,7 +19,7 @@
  */
 
 /**
- * Encapsulates a single integer value and provides parity and primally
+ * Encapsulates a single integer value and provides parity and primality
  * checks. Demonstrates standard PHP OOP patterns: private properties,
  * constructor assignment, accessor methods, and instance/parameter-based
  * boolean checks.
@@ -234,6 +234,7 @@ for ($candidate = 1; $candidate <= 20; $candidate++) {
 $studentName = 'Brittaney Perry-Morgan';
 $assignmentTitle = 'Module 6.2 Programming Assignment';
 $courseName = 'CSD440 Server-Side Scripting';
+date_default_timezone_set('America/Chicago');
 $date = date('F j, Y');
 ?>
 <!DOCTYPE html>
@@ -341,7 +342,8 @@ $date = date('F j, Y');
             <ul>
                 <li><code>$intA = new BrittaneyMyInteger(17);</code> — a prime value</li>
                 <li><code>$intB = new BrittaneyMyInteger(42);</code> — a composite value, later reassigned via
-                    <code>setValue(29)</code></li>
+                    <code>setValue(29)</code>
+                </li>
             </ul>
         </div>
 
@@ -356,11 +358,11 @@ $date = date('F j, Y');
             </thead>
             <tbody>
                 <?php foreach ($tests as $t): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($t['label']); ?></td>
-                        <td><code><?php echo htmlspecialchars($t['method']); ?></code></td>
-                        <td><?php echo $t['result']; ?></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo htmlspecialchars($t['label']); ?></td>
+                            <td><code><?php echo htmlspecialchars($t['method']); ?></code></td>
+                            <td><?php echo $t['result']; ?></td>
+                        </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -382,12 +384,12 @@ $date = date('F j, Y');
             </thead>
             <tbody>
                 <?php foreach ($primeSweep as $row): ?>
-                    <tr class="<?php echo $row['isPrime'] ? 'prime-row' : ''; ?>">
-                        <td><?php echo $row['n']; ?></td>
-                        <td><?php echo formatBool($row['isEven']); ?></td>
-                        <td><?php echo formatBool($row['isOdd']); ?></td>
-                        <td><?php echo formatBool($row['isPrime']); ?></td>
-                    </tr>
+                        <tr class="<?php echo $row['isPrime'] ? 'prime-row' : ''; ?>">
+                            <td><?php echo $row['n']; ?></td>
+                            <td><?php echo formatBool($row['isEven']); ?></td>
+                            <td><?php echo formatBool($row['isOdd']); ?></td>
+                            <td><?php echo formatBool($row['isPrime']); ?></td>
+                        </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
