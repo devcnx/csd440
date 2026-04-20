@@ -22,8 +22,13 @@ $inventory = [
 $searchTerms = ["Mechanical Keyboard", "Wireless Mouse", "USB-C Hub", "Monitor Stand"];
 
 foreach ($searchTerms as $searchName) {
-    $inventory[$searchName] = ["name" => $searchName];
-    $sku = array_search($searchName, array_column($inventory, "name"));
+    // Build a name-to-SKU lookup so array_search returns the original
+    // associative key (e.g. "SKU-A200"), not a zero-indexed position.
+    $nameToSku = array_combine(
+        array_keys($inventory),
+        array_column($inventory, "name")
+    );
+    $sku = array_search($searchName, $nameToSku, true);
 
     if ($sku !== false) {
         $inventory[$sku]["qty"] -= 1;
