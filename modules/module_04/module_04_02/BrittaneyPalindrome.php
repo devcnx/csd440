@@ -33,10 +33,11 @@
  * @param string $str The string to test
  * @return bool True if the string is a palindrome, false otherwise
  */
-function isPalindrome($str)
+function isPalindrome(string $str): bool
 {
-    // Strip spaces and convert to lowercase for case-insensitive comparison
-    $cleaned = strtolower(str_replace(' ', '', $str));
+    // Strip spaces, punctuation, and special characters, then lowercase the
+    // result so the comparison is case- and punctuation-insensitive.
+    $cleaned = strtolower(preg_replace('/[^a-z0-9]/i', '', $str));
     $length = strlen($cleaned);
 
     // Use two indices to compare characters from both ends
@@ -57,7 +58,7 @@ function isPalindrome($str)
  * @param string $str The string to reverse
  * @return string The reversed string
  */
-function reverseString($str)
+function reverseString(string $str): string
 {
     $reversed = '';
     // Start from the last character and build the reversed string

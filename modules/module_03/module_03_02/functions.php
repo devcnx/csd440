@@ -21,7 +21,7 @@
  * @param int $num2 The second number
  * @return int The sum of num1 and num2
  */
-function calculateSum($num1, $num2) {
+function calculateSum(int $num1, int $num2): int {
     return $num1 + $num2;
 }
 ?>
