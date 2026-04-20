@@ -16,8 +16,16 @@
  *   - usort()         : sort the customer list by a chosen field
  *   - count()         : report the size of the dataset and filtered subsets
  *
- * @author Brittaney Perry-Morgan
- * @date   2026-04-19
+ * Requires PHP 8.0 or newer. The script uses language features that are
+ * unavailable on older interpreters, specifically:
+ *   - str_starts_with() (PHP 8.0+) in findCustomersByAreaCode()
+ *   - Typed properties, union return types, and arrow functions (PHP 7.4+)
+ *   - The spaceship operator <=> (PHP 7.0+)
+ *
+ * @author  Brittaney Perry-Morgan
+ * @date    2026-04-19
+ * @version 1.0
+ * @php     >= 8.0
  */
 
 /**
@@ -98,40 +106,6 @@ function sortCustomersByField(array $customers, string $field): array
     return $sorted;
 }
 
-// Customer dataset — 10 records with first name, last name, age, and phone
-$customers = [
-    ['first_name' => 'Amelia', 'last_name' => 'Reyes', 'age' => 27, 'phone' => '(402) 555-0183'],
-    ['first_name' => 'Marcus', 'last_name' => 'Okafor', 'age' => 41, 'phone' => '(312) 555-0294'],
-    ['first_name' => 'Priya', 'last_name' => 'Natarajan', 'age' => 34, 'phone' => '(415) 555-0147'],
-    ['first_name' => 'Desmond', 'last_name' => 'Whitaker', 'age' => 52, 'phone' => '(402) 555-0236'],
-    ['first_name' => 'Hana', 'last_name' => 'Takeda', 'age' => 23, 'phone' => '(206) 555-0411'],
-    ['first_name' => 'Elias', 'last_name' => 'Brennan', 'age' => 38, 'phone' => '(617) 555-0358'],
-    ['first_name' => 'Noemi', 'last_name' => 'Delacroix', 'age' => 45, 'phone' => '(504) 555-0162'],
-    ['first_name' => 'Tobias', 'last_name' => 'Kensington', 'age' => 29, 'phone' => '(312) 555-0477'],
-    ['first_name' => 'Yuki', 'last_name' => 'Morgan', 'age' => 31, 'phone' => '(402) 555-0519'],
-    ['first_name' => 'Imani', 'last_name' => 'Fairchild', 'age' => 36, 'phone' => '(415) 555-0628'],
-];
-
-// Perform the lookups and store results for display in the page body
-$totalCustomers = count($customers);
-$allLastNames = array_column($customers, 'last_name');
-$searchLastName = 'Takeda';
-$byLastName = findCustomerByLastName($customers, $searchLastName);
-$hasWhitaker = in_array('Whitaker', $allLastNames, true);
-$ageRangeLow = 30;
-$ageRangeHigh = 40;
-$inAgeRange = findCustomersInAgeRange($customers, $ageRangeLow, $ageRangeHigh);
-$areaCode = '402';
-$inAreaCode = findCustomersByAreaCode($customers, $areaCode);
-$sortedByAge = sortCustomersByField($customers, 'age');
-$sortedByLastName = sortCustomersByField($customers, 'last_name');
-
-// Page metadata
-$studentName = 'Brittaney Perry-Morgan';
-$assignmentTitle = 'Module 5.2 Programming Assignment';
-$courseName = 'CSD440 Server-Side Scripting';
-$date = date('F j, Y');
-
 /**
  * Renders a customer table from an array of records.
  *
@@ -169,6 +143,40 @@ function renderCustomerTable(array $rows, string $caption = ''): void
     }
     echo "</tbody></table>";
 }
+
+// Customer dataset — 10 records with first name, last name, age, and phone
+$customers = [
+    ['first_name' => 'Amelia', 'last_name' => 'Reyes', 'age' => 27, 'phone' => '(402) 555-0183'],
+    ['first_name' => 'Marcus', 'last_name' => 'Okafor', 'age' => 41, 'phone' => '(312) 555-0294'],
+    ['first_name' => 'Priya', 'last_name' => 'Natarajan', 'age' => 34, 'phone' => '(415) 555-0147'],
+    ['first_name' => 'Desmond', 'last_name' => 'Whitaker', 'age' => 52, 'phone' => '(402) 555-0236'],
+    ['first_name' => 'Hana', 'last_name' => 'Takeda', 'age' => 23, 'phone' => '(206) 555-0411'],
+    ['first_name' => 'Elias', 'last_name' => 'Brennan', 'age' => 38, 'phone' => '(617) 555-0358'],
+    ['first_name' => 'Noemi', 'last_name' => 'Delacroix', 'age' => 45, 'phone' => '(504) 555-0162'],
+    ['first_name' => 'Tobias', 'last_name' => 'Kensington', 'age' => 29, 'phone' => '(312) 555-0477'],
+    ['first_name' => 'Yuki', 'last_name' => 'Morgan', 'age' => 31, 'phone' => '(402) 555-0519'],
+    ['first_name' => 'Imani', 'last_name' => 'Fairchild', 'age' => 36, 'phone' => '(415) 555-0628'],
+];
+
+// Perform the lookups and store results for display in the page body
+$totalCustomers = count($customers);
+$allLastNames = array_column($customers, 'last_name');
+$searchLastName = 'Takeda';
+$byLastName = findCustomerByLastName($customers, $searchLastName);
+$hasWhitaker = in_array('Whitaker', $allLastNames, true);
+$ageRangeLow = 30;
+$ageRangeHigh = 40;
+$inAgeRange = findCustomersInAgeRange($customers, $ageRangeLow, $ageRangeHigh);
+$areaCode = '402';
+$inAreaCode = findCustomersByAreaCode($customers, $areaCode);
+$sortedByAge = sortCustomersByField($customers, 'age');
+$sortedByLastName = sortCustomersByField($customers, 'last_name');
+
+// Page metadata
+$studentName = 'Brittaney Perry-Morgan';
+$assignmentTitle = 'Module 5.2 Programming Assignment';
+$courseName = 'CSD440 Server-Side Scripting';
+$date = date('F j, Y');
 ?>
 <!DOCTYPE html>
 <html lang="en">
