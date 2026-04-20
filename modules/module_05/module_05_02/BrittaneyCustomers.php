@@ -175,6 +175,7 @@ $sortedByLastName = sortCustomersByField($customers, 'last_name');
 $studentName = 'Brittaney Perry-Morgan';
 $assignmentTitle = 'Module 5.2 Programming Assignment';
 $courseName = 'CSD440 Server-Side Scripting';
+date_default_timezone_set('America/Chicago');
 $date = date('F j, Y');
 ?>
 <!DOCTYPE html>
