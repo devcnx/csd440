@@ -79,6 +79,7 @@ $testStrings = [
 ];
 
 // Configuration
+date_default_timezone_set('America/Chicago');
 $studentName = 'Brittaney Perry-Morgan';
 $assignmentTitle = 'Module 4.2 Programming Assignment';
 $courseName = 'CSD440 Server-Side Scripting';
