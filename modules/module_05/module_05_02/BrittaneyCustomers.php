@@ -24,7 +24,6 @@
  *
  * @author  Brittaney Perry-Morgan
  * @date    2026-04-19
- * @version 1.0
  * @php     >= 8.0
  */
 
