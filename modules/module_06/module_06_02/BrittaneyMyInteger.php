@@ -19,7 +19,7 @@
  */
 
 /**
- * Encapsulates a single integer value and provides parity and primality
+ * Encapsulates a single integer value and provides parity and primally
  * checks. Demonstrates standard PHP OOP patterns: private properties,
  * constructor assignment, accessor methods, and instance/parameter-based
  * boolean checks.
@@ -154,68 +154,68 @@ $intB = new BrittaneyMyInteger(42);
 // Collected test results for display in the page body
 $tests = [
     [
-        'label'   => 'Instance A — getValue()',
-        'method'  => 'getValue()',
-        'result'  => (string) $intA->getValue(),
+        'label' => 'Instance A — getValue()',
+        'method' => 'getValue()',
+        'result' => (string) $intA->getValue(),
     ],
     [
-        'label'   => 'Instance A — isEven(10)',
-        'method'  => 'isEven(10)',
-        'result'  => formatBool($intA->isEven(10)),
+        'label' => 'Instance A — isEven(10)',
+        'method' => 'isEven(10)',
+        'result' => formatBool($intA->isEven(10)),
     ],
     [
-        'label'   => 'Instance A — isOdd(10)',
-        'method'  => 'isOdd(10)',
-        'result'  => formatBool($intA->isOdd(10)),
+        'label' => 'Instance A — isOdd(10)',
+        'method' => 'isOdd(10)',
+        'result' => formatBool($intA->isOdd(10)),
     ],
     [
-        'label'   => 'Instance A — isEven(7)',
-        'method'  => 'isEven(7)',
-        'result'  => formatBool($intA->isEven(7)),
+        'label' => 'Instance A — isEven(7)',
+        'method' => 'isEven(7)',
+        'result' => formatBool($intA->isEven(7)),
     ],
     [
-        'label'   => 'Instance A — isOdd(7)',
-        'method'  => 'isOdd(7)',
-        'result'  => formatBool($intA->isOdd(7)),
+        'label' => 'Instance A — isOdd(7)',
+        'method' => 'isOdd(7)',
+        'result' => formatBool($intA->isOdd(7)),
     ],
     [
-        'label'   => 'Instance A — isPrime() on stored value 17',
-        'method'  => 'isPrime()',
-        'result'  => formatBool($intA->isPrime()),
+        'label' => 'Instance A — isPrime() on stored value 17',
+        'method' => 'isPrime()',
+        'result' => formatBool($intA->isPrime()),
     ],
     [
-        'label'   => 'Instance B — getValue()',
-        'method'  => 'getValue()',
-        'result'  => (string) $intB->getValue(),
+        'label' => 'Instance B — getValue()',
+        'method' => 'getValue()',
+        'result' => (string) $intB->getValue(),
     ],
     [
-        'label'   => 'Instance B — isEven(0)',
-        'method'  => 'isEven(0)',
-        'result'  => formatBool($intB->isEven(0)),
+        'label' => 'Instance B — isEven(0)',
+        'method' => 'isEven(0)',
+        'result' => formatBool($intB->isEven(0)),
     ],
     [
-        'label'   => 'Instance B — isOdd(-3)',
-        'method'  => 'isOdd(-3)',
-        'result'  => formatBool($intB->isOdd(-3)),
+        'label' => 'Instance B — isOdd(-3)',
+        'method' => 'isOdd(-3)',
+        'result' => formatBool($intB->isOdd(-3)),
     ],
     [
-        'label'   => 'Instance B — isPrime() on stored value 42',
-        'method'  => 'isPrime()',
-        'result'  => formatBool($intB->isPrime()),
+        'label' => 'Instance B — isPrime() on stored value 42',
+        'method' => 'isPrime()',
+        'result' => formatBool($intB->isPrime()),
     ],
 ];
 
 // Exercise the setter on Instance B and re-run isPrime()
 $intB->setValue(29);
 $tests[] = [
-    'label'   => 'Instance B — setValue(29), then getValue()',
-    'method'  => 'setValue(29) → getValue()',
-    'result'  => (string) $intB->getValue(),
+    'label' => 'Instance B — setValue(29), then getValue()',
+    'method' => 'setValue(29) → getValue()',
+    'result' => (string) $intB->getValue(),
 ];
 $tests[] = [
-    'label'   => 'Instance B — isPrime() on new stored value 29',
-    'method'  => 'isPrime()',
-    'result'  => formatBool($intB->isPrime()),
+    'label' => 'Instance B — isPrime() on new stored value 29',
+    'method' => 'isPrime()',
+    'result' => formatBool($intB->isPrime()),
 ];
 
 // Build a prime sweep from 1 through 20 to demonstrate isPrime() over a range
@@ -223,163 +223,174 @@ $primeSweep = [];
 for ($candidate = 1; $candidate <= 20; $candidate++) {
     $probe = new BrittaneyMyInteger($candidate);
     $primeSweep[] = [
-        'n'       => $candidate,
-        'isEven'  => $probe->isEven($candidate),
-        'isOdd'   => $probe->isOdd($candidate),
+        'n' => $candidate,
+        'isEven' => $probe->isEven($candidate),
+        'isOdd' => $probe->isOdd($candidate),
         'isPrime' => $probe->isPrime(),
     ];
 }
 
 // Page metadata
-$studentName     = 'Brittaney Perry-Morgan';
+$studentName = 'Brittaney Perry-Morgan';
 $assignmentTitle = 'Module 6.2 Programming Assignment';
-$courseName      = 'CSD440 Server-Side Scripting';
-$date            = date('F j, Y');
+$courseName = 'CSD440 Server-Side Scripting';
+$date = date('F j, Y');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyInteger Class — <?php echo $assignmentTitle; ?></title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-            color: #222;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyInteger Class — <?php echo $assignmentTitle; ?></title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 960px;
+                margin: 40px auto;
+                padding: 20px;
+                background-color: #f5f5f5;
+                color: #222;
+            }
 
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-        }
+            h1 {
+                text-align: center;
+                color: #2c3e50;
+            }
 
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #4a90d9;
-            padding-bottom: 6px;
-            margin-top: 36px;
-        }
+            h2 {
+                color: #2c3e50;
+                border-bottom: 2px solid #4a90d9;
+                padding-bottom: 6px;
+                margin-top: 36px;
+            }
 
-        .header-info {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #555;
-        }
+            .header-info {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #555;
+            }
 
-        .query-note {
-            background: #eef4fb;
-            border-left: 4px solid #4a90d9;
-            padding: 10px 14px;
-            margin: 12px 0;
-            font-size: 0.95em;
-        }
+            .query-note {
+                background: #eef4fb;
+                border-left: 4px solid #4a90d9;
+                padding: 10px 14px;
+                margin: 12px 0;
+                font-size: 0.95em;
+            }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-            margin-top: 8px;
-        }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: #fff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+                margin-top: 8px;
+            }
 
-        th {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 10px 12px;
-            text-align: left;
-        }
+            th {
+                background-color: #2c3e50;
+                color: #fff;
+                padding: 10px 12px;
+                text-align: left;
+            }
 
-        td {
-            padding: 10px 12px;
-            border-bottom: 1px solid #ddd;
-        }
+            td {
+                padding: 10px 12px;
+                border-bottom: 1px solid #ddd;
+            }
 
-        tr:hover {
-            background-color: #f9f9f9;
-        }
+            tr:hover {
+                background-color: #f9f9f9;
+            }
 
-        code {
-            background: #f0f0f0;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: Menlo, Consolas, monospace;
-            font-size: 0.9em;
-        }
+            code {
+                background: #f0f0f0;
+                padding: 2px 6px;
+                border-radius: 3px;
+                font-family: Menlo, Consolas, monospace;
+                font-size: 0.9em;
+            }
 
-        .flag-true  { color: #27ae60; font-weight: bold; }
-        .flag-false { color: #c0392b; font-weight: bold; }
-        .prime-row  { background-color: #e8f7ee; }
-    </style>
-</head>
+            .flag-true {
+                color: #27ae60;
+                font-weight: bold;
+            }
 
-<body>
-    <h1>MyInteger Class Test Harness</h1>
-    <div class="header-info">
-        <p><strong><?php echo $studentName; ?></strong></p>
-        <p><?php echo $assignmentTitle; ?> — <?php echo $courseName; ?></p>
-        <p><?php echo $date; ?></p>
-    </div>
+            .flag-false {
+                color: #c0392b;
+                font-weight: bold;
+            }
 
-    <h2>Instances Under Test</h2>
-    <div class="query-note">
-        <p>Two instances of <code>BrittaneyMyInteger</code> are created to exercise every method:</p>
-        <ul>
-            <li><code>$intA = new BrittaneyMyInteger(17);</code> — a prime value</li>
-            <li><code>$intB = new BrittaneyMyInteger(42);</code> — a composite value, later reassigned via <code>setValue(29)</code></li>
-        </ul>
-    </div>
+            .prime-row {
+                background-color: #e8f7ee;
+            }
+        </style>
+    </head>
 
-    <h2>Method Invocations</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Test</th>
-                <th>Method Call</th>
-                <th>Result</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($tests as $t): ?>
+    <body>
+        <h1>MyInteger Class Test Harness</h1>
+        <div class="header-info">
+            <p><strong><?php echo $studentName; ?></strong></p>
+            <p><?php echo $assignmentTitle; ?> — <?php echo $courseName; ?></p>
+            <p><?php echo $date; ?></p>
+        </div>
+
+        <h2>Instances Under Test</h2>
+        <div class="query-note">
+            <p>Two instances of <code>BrittaneyMyInteger</code> are created to exercise every method:</p>
+            <ul>
+                <li><code>$intA = new BrittaneyMyInteger(17);</code> — a prime value</li>
+                <li><code>$intB = new BrittaneyMyInteger(42);</code> — a composite value, later reassigned via
+                    <code>setValue(29)</code></li>
+            </ul>
+        </div>
+
+        <h2>Method Invocations</h2>
+        <table>
+            <thead>
                 <tr>
-                    <td><?php echo htmlspecialchars($t['label']); ?></td>
-                    <td><code><?php echo htmlspecialchars($t['method']); ?></code></td>
-                    <td><?php echo $t['result']; ?></td>
+                    <th>Test</th>
+                    <th>Method Call</th>
+                    <th>Result</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <?php foreach ($tests as $t): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($t['label']); ?></td>
+                        <td><code><?php echo htmlspecialchars($t['method']); ?></code></td>
+                        <td><?php echo $t['result']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
 
-    <h2>isPrime() Sweep: 1 – 20</h2>
-    <div class="query-note">
-        Each candidate is wrapped in its own instance of <code>BrittaneyMyInteger</code>
-        and probed with all three boolean methods. Prime rows are highlighted so the
-        classic prime sequence (2, 3, 5, 7, 11, 13, 17, 19) is easy to verify at a glance.
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>n</th>
-                <th>isEven(n)</th>
-                <th>isOdd(n)</th>
-                <th>isPrime()</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($primeSweep as $row): ?>
-                <tr class="<?php echo $row['isPrime'] ? 'prime-row' : ''; ?>">
-                    <td><?php echo $row['n']; ?></td>
-                    <td><?php echo formatBool($row['isEven']); ?></td>
-                    <td><?php echo formatBool($row['isOdd']); ?></td>
-                    <td><?php echo formatBool($row['isPrime']); ?></td>
+        <h2>isPrime() Sweep: 1 – 20</h2>
+        <div class="query-note">
+            Each candidate is wrapped in its own instance of <code>BrittaneyMyInteger</code>
+            and probed with all three boolean methods. Prime rows are highlighted so the
+            classic prime sequence (2, 3, 5, 7, 11, 13, 17, 19) is easy to verify at a glance.
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>n</th>
+                    <th>isEven(n)</th>
+                    <th>isOdd(n)</th>
+                    <th>isPrime()</th>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</body>
+            </thead>
+            <tbody>
+                <?php foreach ($primeSweep as $row): ?>
+                    <tr class="<?php echo $row['isPrime'] ? 'prime-row' : ''; ?>">
+                        <td><?php echo $row['n']; ?></td>
+                        <td><?php echo formatBool($row['isEven']); ?></td>
+                        <td><?php echo formatBool($row['isOdd']); ?></td>
+                        <td><?php echo formatBool($row['isPrime']); ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </body>
 
 </html>
