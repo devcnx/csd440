@@ -1,0 +1,113 @@
+/*
+ * CSD440 — Base Stylesheet
+ *
+ * Common presentation rules shared across module assignments.
+ * Link this file from each module's <head> and supplement with
+ * page-specific overrides in a <style> block when needed.
+ *
+ * Usage:
+ *   <link rel="stylesheet" href="../shared.css">
+ *   (or adjust the relative path based on depth)
+ */
+
+/* ── Reset & Body ──────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* ── Headings ──────────────────────────────────────────────── */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #4a90d9;
+    padding-bottom: 6px;
+    margin-top: 36px;
+}
+
+/* ── Header Info Block ────────────────────────────────────── */
+.header-info {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* ── Tables ───────────────────────────────────────────────── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    margin-top: 8px;
+}
+
+caption {
+    caption-side: top;
+    text-align: left;
+    padding: 8px 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+th {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* ── Query / Annotation Notes ─────────────────────────────── */
+.query-note {
+    background: #eef4fb;
+    border-left: 4px solid #4a90d9;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 0.95em;
+}
+
+/* ── Boolean Flag Styles ──────────────────────────────────── */
+.flag-true {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.flag-false {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+/* ── Empty State ──────────────────────────────────────────── */
+.empty {
+    color: #888;
+    font-style: italic;
+}
+
+/* ── Inline Code ──────────────────────────────────────────── */
+code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Menlo, Consolas, monospace;
+    font-size: 0.9em;
+}
