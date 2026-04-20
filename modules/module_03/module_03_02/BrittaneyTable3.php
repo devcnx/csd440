@@ -89,8 +89,8 @@ $max  = 100;     // Maximum random number value
                 // Inner loop - iterate through each column in the current row
                 for ($col = 1; $col <= $cols; $col++) {
                     // Generate two random numbers and calculate their sum
-                    $num1 = rand($min, $max);
-                    $num2 = rand($min, $max);
+                    $num1 = random_int($min, $max);
+                    $num2 = random_int($min, $max);
                     $sum = calculateSum($num1, $num2);
 ?>
                 <td><?php echo $sum; ?></td>

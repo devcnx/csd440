@@ -91,7 +91,7 @@ $max  = 100;     // Maximum random number value
                 // Inner loop - iterate through each column in the current row
                 for ($col = 1; $col <= $cols; $col++) {
                     // Generate a random number for each cell
-                    $randomNumber = rand($min, $max);
+                    $randomNumber = random_int($min, $max);
 ?>
                 <td><?php echo $randomNumber; ?></td>
 <?php
