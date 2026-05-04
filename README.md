@@ -46,8 +46,8 @@ Open `http://localhost:8000/BrittaneyCustomers.php` in a browser. `Ctrl+C` to st
 | 4 | String Manipulation, Palindrome Checker | [module_04_02/BrittaneyPalindrome.php](modules/module_04/module_04_02/BrittaneyPalindrome.php) |
 | 5 | Arrays, Customer Records | [module_05_02/BrittaneyCustomers.php](modules/module_05/module_05_02/BrittaneyCustomers.php) |
 | 6 | Objects, MyInteger Class | [module_06_02/BrittaneyMyInteger.php](modules/module_06/module_06_02/BrittaneyMyInteger.php) |
-| 7 | Forms *(upcoming)* | — |
-| 8 | PHP & MySQL *(upcoming)* | — |
+| 7 | Forms, Validation & Sanitization | [module_07_02/BrittaneyForm.php](modules/module_07/module_07_02/BrittaneyForm.php) |
+| 8 | PHP & MySQL (MySQLi CRUD scaffolding) | [module_08_02/BrittaneyCreateTable.php](modules/module_08/module_08_02/BrittaneyCreateTable.php) |
 | 9 | CRUD Forms *(upcoming)* | — |
 | 10 | JSON *(upcoming)* | — |
 | 11 | PDFs *(upcoming)* | — |
