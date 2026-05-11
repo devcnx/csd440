@@ -38,19 +38,19 @@ Open `http://localhost:8000/BrittaneyCustomers.php` in a browser. `Ctrl+C` to st
 
 ## Module Index
 
-| Module | Topic | Assignment |
-|-------:|-------|------------|
-| 1 | Apache / XAMPP Setup, First PHP Program | [module_01_03/BrittaneyFirstProgram.php](modules/module_01/module_01_03/BrittaneyFirstProgram.php) |
-| 2 | Nested Loops, Random Number Table | [module_02_02/BrittaneyTable2.php](modules/module_02/module_02_02/BrittaneyTable2.php) |
-| 3 | External Functions | [module_03_02/BrittaneyTable3.php](modules/module_03/module_03_02/BrittaneyTable3.php) |
-| 4 | String Manipulation, Palindrome Checker | [module_04_02/BrittaneyPalindrome.php](modules/module_04/module_04_02/BrittaneyPalindrome.php) |
-| 5 | Arrays, Customer Records | [module_05_02/BrittaneyCustomers.php](modules/module_05/module_05_02/BrittaneyCustomers.php) |
-| 6 | Objects, MyInteger Class | [module_06_02/BrittaneyMyInteger.php](modules/module_06/module_06_02/BrittaneyMyInteger.php) |
-| 7 | Forms, Validation & Sanitization | [module_07_02/BrittaneyForm.php](modules/module_07/module_07_02/BrittaneyForm.php) |
-| 8 | PHP & MySQL (MySQLi CRUD scaffolding) | [module_08_02/BrittaneyCreateTable.php](modules/module_08/module_08_02/BrittaneyCreateTable.php) |
-| 9 | CRUD Forms *(upcoming)* | — |
-| 10 | JSON *(upcoming)* | — |
-| 11 | PDFs *(upcoming)* | — |
+| Module | Topic                                   | Assignment                                                                                         |
+| -----: | --------------------------------------- | -------------------------------------------------------------------------------------------------- |
+|      1 | Apache / XAMPP Setup, First PHP Program | [module_01_03/BrittaneyFirstProgram.php](modules/module_01/module_01_03/BrittaneyFirstProgram.php) |
+|      2 | Nested Loops, Random Number Table       | [module_02_02/BrittaneyTable2.php](modules/module_02/module_02_02/BrittaneyTable2.php)             |
+|      3 | External Functions                      | [module_03_02/BrittaneyTable3.php](modules/module_03/module_03_02/BrittaneyTable3.php)             |
+|      4 | String Manipulation, Palindrome Checker | [module_04_02/BrittaneyPalindrome.php](modules/module_04/module_04_02/BrittaneyPalindrome.php)     |
+|      5 | Arrays, Customer Records                | [module_05_02/BrittaneyCustomers.php](modules/module_05/module_05_02/BrittaneyCustomers.php)       |
+|      6 | Objects, MyInteger Class                | [module_06_02/BrittaneyMyInteger.php](modules/module_06/module_06_02/BrittaneyMyInteger.php)       |
+|      7 | Forms, Validation & Sanitization        | [module_07_02/BrittaneyForm.php](modules/module_07/module_07_02/BrittaneyForm.php)                 |
+|      8 | PHP & MySQL (MySQLi CRUD scaffolding)   | [module_08_02/BrittaneyCreateTable.php](modules/module_08/module_08_02/BrittaneyCreateTable.php)   |
+|      9 | CRUD Forms (Query, Insert, Index pages) | [module_09_02/BrittaneyIndex.php](modules/module_09/module_09_02/BrittaneyIndex.php)               |
+|     10 | JSON _(upcoming)_                       | —                                                                                                  |
+|     11 | PDFs _(upcoming)_                       | —                                                                                                  |
 
 ---
 
@@ -61,13 +61,14 @@ csd440/
 ├── modules/
 │   └── module_NN/
 │       └── module_NN_NN/
-│           ├── Brittaney*.php          # Assignment source
-│           └── BPERRYMORGAN-MODULE...pdf  # Submitted deliverable
+│           ├── Brittaney*.php                              # Assignment source
+│           ├── BPERRYMORGAN-MODULE NN.N SOURCE CODE.docx   # Source code deliverable
+│           └── BPERRYMORGAN-MODULE NN.N DELIVERABLES.docx  # Screenshots deliverable
 ├── .gitignore
 └── README.md
 ```
 
-Each programming assignment lives in its own `module_NN_NN` subdirectory alongside its submission PDF.
+Each programming assignment lives in its own `module_NN_NN` subdirectory alongside its submission deliverables (source code and screenshots as separate Word documents).
 
 ---
 
